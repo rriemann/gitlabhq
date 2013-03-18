@@ -109,6 +109,8 @@ class WikiToGollumMigrator
     if slug.downcase == "index"
       attributes[:title] = "home" unless home_already_exists?(project)
     end
+    
+    attributes[:title].gsub!(/\//, '-')
 
     attributes
   end
