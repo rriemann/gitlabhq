@@ -37,7 +37,7 @@ class WikiToGollumMigrator
     log "  Removing Wiki repo for project: #{project.path_with_namespace}"
     path = GollumWiki.new(project, nil).path_with_namespace
     if Gitlab::Shell.new.remove_repository(path)
-      log "  Wiki destroyed successfully. " + "[OK}".green
+      log "  Wiki destroyed successfully. " + "[OK]".green
     else
       log "  Problem destroying wiki. Please remove it manually. " + "[FAILED]".red
     end
